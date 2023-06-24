@@ -7,7 +7,6 @@ from score_board import ScoreBoard
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
-# screen.screensize(canvheight=600, canvwidth=600, bg="black")
 screen.title("---The Snake Game---")
 screen.tracer(0)
 
@@ -25,7 +24,7 @@ screen.onkey(key="Right", fun=snake.goright)
 
 while is_game_on:
     screen.update()
-    time.sleep(0.05)
+    time.sleep(score.difficulty)
     snake.move()
     if snake.head.distance(food) < 15:
         score.get_point()
